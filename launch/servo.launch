@@ -1,0 +1,4 @@
+<launch>
+	<node pkg="servo_hat" name="deg_change" type="input_deg.py" required="true" />
+	<node pkg="servo_hat" name="pulse_out" type="servo_hat.py" required="true" />
+</launch>
