@@ -11,7 +11,7 @@ def main():
     while not rospy.is_shutdown():
         deg = input('deg =')
         pulse = deg * 470 / 180 + 100
-        print pulse
+        print (pulse)
         pub.publish(pulse)
         rate.sleep()
 
