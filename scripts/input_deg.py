@@ -8,15 +8,15 @@ def main():
 
     deg = 0
     pulse = 0
+    #rate = rospy.Rate(0.5)
     while not rospy.is_shutdown():
-        deg = input('deg =')
-        pulse = deg * 470 / 180 + 100
-        print (pulse)
+        deg = int(input('deg ='))
+        pulse = int(deg * 470 / 180 + 100)
+        print(pulse)
         pub.publish(pulse)
-        rate.sleep()
+        #rate.sleep()
 
 if __name__ == '__main__':
     try:
         main()
-    except rospy.ROSInterruptException:
-        pass
+    except rospy.ROSInterruptException:pass
