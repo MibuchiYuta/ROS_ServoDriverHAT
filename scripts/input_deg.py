@@ -13,7 +13,6 @@ def main():
     while not rospy.is_shutdown():
         deg = int(input('deg ='))
         pulse = int(deg * 470 / 180 + 100)
-        print(pulse)
         pub.publish(pulse)
 
 if __name__ == '__main__':
