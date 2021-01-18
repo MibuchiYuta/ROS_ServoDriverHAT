@@ -1,16 +1,20 @@
 # ROS_ServoDriverHAT
-PCA9685ハット基盤をRaspberry pi で使うためのROSパッケージ.  
+
+PCA9685HAT基盤をRaspberry pi で使うためのROSパッケージ.  
 最大で16台のサーボモータを同時に指定した角度に動かすことができます.
 
 ---
+
 ## 動作環境
 - Raspberry pi 3 b+
 - ubuntu 20.04 server
 - ROS Noetic
+
 ---
+
 ## 前提条件
-本パッケージは千葉工業大学ロボットシステム学の講義内で作成したパッケージに変更を加えたものです.  
-また,ぞれに合わせて講義ないの環境構築方法に沿って進めております.
+- 本パッケージは[千葉工業大学ロボットシステム学の講義](https://github.com/ryuichiueda/robosys2020/blob/master/md/ros.md)内で作成したパッケージに変更を加えたものです.また,それに合わせて[講義内の環境構築方法](https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu20.04_server)に沿って進めております.
+- [PCA9685 ServoDriverHATデータシート](https://www.waveshare.com/wiki/Servo_Driver_HAT)
 
 ---
 
@@ -18,15 +22,16 @@ PCA9685ハット基盤をRaspberry pi で使うためのROSパッケージ.
 - Raspberry pi 3b+
 - PCA9685 ServoDriverHAT
 - Futaba s3003 (同シリーズs3010でも動作確認をしております)
-- 12V 直流電源
+- 12V 直流電源 (RAspberry piの電源も兼ねます)
 
 ---
 
 ## 取り付け方法
 1. Raspberry piのgpioピンにHAT基盤を取り付ける.
-2. 信号線,電源,GND野向に注意してサーボのケーブルをHAT基板に取り付ける.
+2. 信号線,電源,GNDの向きに注意してサーボのケーブルをHAT基板に取り付ける.
 3. 12Vの出力端子をHAT基板に注意して取り付ける.
 4. 配線を確認し , 12V電源をオンにする.
+![配線図](https://user-images.githubusercontent.com/53966307/104864030-2b76fd80-597b-11eb-9f30-befaafae9031.PNG)
 
 ---
 
@@ -69,7 +74,7 @@ $ sudo apt install i2c-tools
 $ sudo apt install python3-smbus
 ```
 
-### Adafruit Python PCA9685 のインストール
+### [Adafruit Python PCA9685](https://github.com/adafruit/Adafruit_Python_PCA9685) のインストール
 ```bash
 $ sudo apt install python-pip python3-pip
 $ sudo apt-get install git build-essential python-dev
@@ -124,7 +129,10 @@ deg * (570-100) / 180 + 100 = pulse
 ---
 
 ## 動作動画
+[![動画](https://user-images.githubusercontent.com/53966307/104864086-5c573280-597b-11eb-9c5f-06ec9a1f227c.jpg)](https://youtu.be/FvdAG-TJGng)
 
 ---
 
 ## ライセンス
+- ROS : [BSD 3-Clause License](https://github.com/MibuchiYuta/ROS_ServoDriverHAT/blob/master/LICENSE)
+- Adafruit Python PCA9685 : [MIT License](https://github.com/adafruit/Adafruit_Python_PCA9685/blob/master/LICENSE)
